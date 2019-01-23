@@ -1,0 +1,120 @@
+html {
+  background-color: lightsteelblue;
+  font-family: Roboto, Sans-Serif;
+  font-size: 10px;
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+  transform-style: preserve-3d;
+	transform: perspective(800px);
+}
+
+button {
+  background-color: #0079c1;
+  border-color: #0079c1;
+  border-radius: 2rem;
+  color: white;
+  font-family: Roboto, Sans-Serif;
+  font-size: 2.5rem;
+  margin: 0 auto;
+  padding: 2rem;
+  transition: ease-in-out 0.333s;
+}
+
+button:hover {
+  background-color: #005587;
+  border-color: #005587;
+  color: white;
+  cursor: pointer;
+}
+
+input {
+  border-color: #0079c1;
+  border-radius: 2rem;
+  color: #0079c1;
+  display: block;
+  font-family: Roboto, Sans-Serif;
+  font-size: 1.5rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  transition: ease-in-out 0.333s;
+  width: 250px;
+}
+
+input::placeholder {
+  color: red;
+  transition: ease-in-out 0.333s;
+}
+
+input:hover {
+  background-color: aliceblue;
+  color: #005587;
+}
+
+input:hover::placeholder {
+  color: crimson;
+}
+
+p {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  color: #0079c1;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 2rem auto;
+  padding: 16px;
+  width: 75%;
+}
+
+a {
+	position: relative;
+	display: block;
+	padding: 2rem 8rem;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	user-select: none;
+	color: white;
+  width: 10rem;
+  margin: 1rem auto;
+  font-size: 1.5rem;
+	
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background: linear-gradient(135deg, #6e8efb, #a777e3);
+		border-radius: 2rem;
+		transition: box-shadow .5s ease, transform .2s ease; 
+		will-change: transform;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+		transform:
+			translateY(var(--ty, 0))
+			rotateX(var(--rx, 0))
+			rotateY(var(--ry, 0))
+			translateZ(var(--tz, -12px));
+	}
+	
+	&:hover::before {
+		box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+	}
+	
+	&::after {
+		position: relative;
+		display: inline-block;
+		content: attr(data-title);
+		transition: transform .2s ease; 
+		font-weight: bold;
+		letter-spacing: .05rem;
+		will-change: transform;
+		transform:
+			translateY(var(--ty, 0))
+			rotateX(var(--rx, 0))
+			rotateY(var(--ry, 0));
+	}
+}
